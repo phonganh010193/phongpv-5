@@ -1,12 +1,18 @@
 <template >
-    <td>{{ name === 'first' ? item.first : item.last }}</td>
+    <td>{{ showContent }}</td>
 </template>
 <script>
 export default {
     props: {
         item: Object,
         name: String
+    },
+    computed: {
+        showContent() {
+            return this.name === 'first' ? this.item.first : this.item.last 
+        }
     }
+
     
 }
 </script>
